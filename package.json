@@ -1,0 +1,68 @@
+{
+  "name": "clinical-ai-evidence-registry",
+  "version": "0.1.0",
+  "description": "Clinical AI evidence registry for model cards, cohort coverage, safety events, validation claims, and board-ready release posture.",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "author": "mizcausevic-dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizcausevic-dev/clinical-ai-evidence-registry.git"
+  },
+  "keywords": [
+    "clinical-ai",
+    "healthtech",
+    "pharma",
+    "evidence-registry",
+    "model-risk",
+    "cohort-coverage",
+    "python",
+    "r",
+    "sql",
+    "kinetic-gain"
+  ],
+  "bin": {
+    "clinical-ai-evidence-registry": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "demo": "tsx scripts/run_demo.ts",
+    "prerender": "tsx scripts/prerender.ts",
+    "smoke": "tsx scripts/smoke_check.ts",
+    "python:test": "python -m unittest discover -s python/tests",
+    "python:demo": "python python/clinical_ai_evidence_registry/pack.py fixtures/clinical-ai-evidence.json --format markdown",
+    "sql:check": "tsx scripts/check_sql.ts",
+    "verify": "npm run lint && npm run typecheck && npm run coverage && npm run build && npm run demo && npm run python:test && npm run sql:check && npm run prerender && npm run smoke",
+    "render:assets": "powershell -ExecutionPolicy Bypass -File .\\scripts\\render_readme_assets.ps1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "^4.1.8",
+    "eslint": "^9.17.0",
+    "globals": "^16.5.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^4.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "asOf": "2026-06-05T18:00:00Z",
+  "registry": "Clinical AI release evidence registry",
+  "models": [
+    {
+      "name": "Radiology triage assistant",
+      "domain": "imaging",
+      "intendedUse": "prioritize chest imaging queues",
+      "validationCohorts": 8,
+      "minimumCohorts": 7,
+      "externalValidationSites": 3,
+      "safetyEvents": 1,
+      "unresolvedBiasFindings": 0,
+      "missingDocuments": ["post-market monitoring cadence"],
+      "owner": "Clinical safety officer",
+      "nextAction": "Lock post-market monitoring cadence before expanding site rollout."
+    },
+    {
+      "name": "Sepsis early-warning model",
+      "domain": "acute care",
+      "intendedUse": "surface deterioration risk within monitored inpatient units",
+      "validationCohorts": 6,
+      "minimumCohorts": 8,
+      "externalValidationSites": 1,
+      "safetyEvents": 4,
+      "unresolvedBiasFindings": 2,
+      "missingDocuments": ["subgroup calibration evidence", "rollback criteria"],
+      "owner": "Quality systems lead",
+      "nextAction": "Hold production expansion until subgroup calibration and rollback criteria are complete."
+    },
+    {
+      "name": "Prior authorization summarizer",
+      "domain": "payer operations",
+      "intendedUse": "summarize chart evidence for reviewer packets",
+      "validationCohorts": 5,
+      "minimumCohorts": 5,
+      "externalValidationSites": 2,
+      "safetyEvents": 0,
+      "unresolvedBiasFindings": 1,
+      "missingDocuments": [],
+      "owner": "Utilization management",
+      "nextAction": "Proceed with monitored release and weekly reviewer disagreement sampling."
+    },
+    {
+      "name": "Clinical trial matching agent",
+      "domain": "pharma",
+      "intendedUse": "match eligible patients to active study protocols",
+      "validationCohorts": 4,
+      "minimumCohorts": 6,
+      "externalValidationSites": 2,
+      "safetyEvents": 2,
+      "unresolvedBiasFindings": 1,
+      "missingDocuments": ["eligibility drift report", "principal investigator attestation"],
+      "owner": "Research operations",
+      "nextAction": "Complete eligibility drift report before sponsor-facing launch."
+    }
+  ]
+}
