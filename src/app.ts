@@ -66,6 +66,7 @@ export function renderPage(input: RegistryInput): string {
     .proof-card p { margin: 0; color: var(--muted); line-height: 1.62; }
     .proof-card ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.75; }
     .proof-card li::marker { color: var(--cyan); }
+    .proof-card a { color: var(--cyan); text-decoration: none; }
     footer { margin-top:34px; color:var(--muted); font-family:Consolas,monospace; }
     @media (max-width:820px) { .metrics,.grid,dl { grid-template-columns:1fr; } }
   </style>
@@ -101,7 +102,14 @@ export function renderPage(input: RegistryInput): string {
         <p>Demo fixtures are synthetic and credential-free; the pattern is reusable for real diligence packets without exposing customer or regulated data.</p>
       </article>
     </section>
-    <footer>Primary recommendation: ${registry.primaryRecommendation}</footer>
+    <section class="proof-pack" aria-label="Product depth and shared pattern">
+      <article class="proof-card"><small>Product purpose</small><h2>What this product does</h2><p>A release-readiness evidence registry for clinical AI where validation cohorts, bias findings, safety events, missing evidence, and external validation need to be readable by clinical, quality, legal, and executive leaders.</p></article>
+      <article class="proof-card"><small>Buyer lens</small><h2>Why the page exists</h2><p>It gives HealthTech and Pharma buyers a way to prove model governance without forcing non-technical stakeholders into notebooks, ad hoc screenshots, or raw validation exports.</p></article>
+      <article class="proof-card"><small>Value architecture</small><h2>How it turns into action</h2><p>The value is not just model scoring. It is a reusable decision packet: which model can proceed, which one needs more evidence, who owns the next action, and what release risk remains.</p></article>
+      <article class="proof-card"><small>Technical proof</small><h2>How reviewers can trust it</h2><p>The repo keeps typed scoring, synthetic fixture data, API output, static prerendering, and public-safe HTML in the same reviewable package.</p></article>
+      <article class="proof-card"><small>What these repos have in common</small><h2>Platform complexity becomes board-ready operating proof.</h2><p>Each repo names a buyer pain, exposes an evidence model, produces a reusable artifact, and keeps the public surface safe with synthetic data instead of credentials or customer exports.</p></article>
+      <article class="proof-card"><small>Interlinks</small><h2>Where this fits</h2><p><a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://kineticgain.com/">Kinetic Gain</a> · <a href="https://github.com/mizcausevic-dev/clinical-ai-evidence-registry">GitHub</a></p></article>
+    </section><footer>Primary recommendation: ${registry.primaryRecommendation}</footer>
   </main>
 </body>
 </html>`;
